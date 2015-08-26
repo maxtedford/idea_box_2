@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<h1>IdeaBox 2.0</h1>
+<p>So many ideas!</p>
+<form id="idea-form">
+  <label>Title</label>
+  <input type="text" class="form-control" id="idea-title" placeholder="Enter Title">
+  <label>Description</label>
+  <input type="text" class="form-control" id="idea-body" placeholder="Enter Description">
+  <button type="submit" id="idea-save" class="btn btn-default">Save</button>
+</form>
+<div class="form-group">
+  <label>Search:</label>
+  <input type="text" class="form-control" id="search-field" placeholder="Find Idea">
+</div>
+<ul class="list-group" id="idea-list">
+  <% @ideas.each do |idea| %>
+    <li class="list-group-item" data-id="<%= idea.id %>">
+      <h3 class="idea-title"><%= idea.title %></h3><br>
+      <p class="idea-body"><%= idea.body %></p><br>
+      <p class="idea-quality">Quality: <%= idea.quality %></p>
+    </li>
+  <% end %>
+</ul>
+</html>
